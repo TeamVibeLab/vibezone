@@ -61,18 +61,18 @@ function LogoImage({ extraClassName }: { extraClassName: string } )
 
 export default function Footer() {
     return (
-        <footer className="mx-2 my-3 pt-6 pb-3
-        border-4 border-white rounded-4xl
-        bg-black" >
+        <footer className="mt-3 pt-6 pb-3
+        border-4 rounded-t-4xl border-dark-foreground bg-dark-foreground" >
             <LogoImage extraClassName="mx-auto pb-6 lg:hidden"/>
             <div className="md:px-100
-            flex md:flex-row max-md:flex-col items-start justify-center gap-x-8">
+            flex md:flex-row max-md:flex-col items-start justify-center gap-x-8
+            text-bright-foreground">
                 <LogoImage extraClassName="px-4 max-lg:hidden"/>
                 <NavLinks title="Сторінки" linkParams={footerWebsiteLinks}/>
                 <NavLinks title="Соціальні мережі" linkParams={footerExternalLinks}/>
                 <NavLinks title="Контакти" linkParams={contactLinks}/>
             </div>
-            <p className="text-xs text-gray-500
+            <p className="text-xs
             md:pt-6 max-md:pt-3
             flex items-center justify-center">&copy;2025 VibeZone. Створено з турботою про вас ;&#41;</p>
         </footer>
@@ -91,7 +91,7 @@ function NavLinks({ title, linkParams } : { title: string, linkParams: Array<Hyp
             <p className="text-xl font-bold">{title}</p>
             <nav className={`flex md:flex-col max-md:flex-row md:gap-y-0.5 max-md:gap-x-2`}>
                 {linkParams.map(item => (
-                    <a className="text-base transition hover:opacity-75" key={item.text} {...item}>{item.text}</a>
+                    <a className="text-base text-bright-foreground transition hover:opacity-75" key={item.text} {...item}>{item.text}</a>
                 ))}
             </nav>
         </div>
