@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import LogoImage from "@/components/LogoImage/LogoImage"
 
 const footerWebsiteLinks = [
     {
@@ -46,28 +45,15 @@ const contactLinks = [
     },
 ];
 
-function LogoImage({ extraClassName }: { extraClassName: string } )
-{
-    return (
-    <Image
-        src="/images/logo.png"
-        alt="Логотип VibeZone"
-        width={1007}
-        height={171}
-        className={`w-60 object-center ${extraClassName}`}
-    />
-    );
-}
-
 export default function Footer() {
     return (
         <footer className="mt-3 pt-6 pb-3
-        border-4 rounded-t-4xl border-dark-foreground bg-dark-foreground" >
-            <LogoImage extraClassName="mx-auto pb-6 lg:hidden"/>
-            <div className="md:px-100
+         rounded-t-4xl bg-dark-foreground" >
+            <LogoImage bright={true} extraClassName="mx-auto pb-6 lg:hidden"/>
+            <div className="md:max-w-8xl
             flex md:flex-row max-md:flex-col items-start justify-center gap-x-8
             text-bright-foreground">
-                <LogoImage extraClassName="px-4 max-lg:hidden"/>
+                <LogoImage bright={true} extraClassName="px-4 max-lg:hidden"/>
                 <NavLinks title="Сторінки" linkParams={footerWebsiteLinks}/>
                 <NavLinks title="Соціальні мережі" linkParams={footerExternalLinks}/>
                 <NavLinks title="Контакти" linkParams={contactLinks}/>
