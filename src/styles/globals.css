@@ -12,6 +12,20 @@
   --font-play: "Play", sans-serif;
 }
 
+/* TailwindCSS не підтримує ще text-shadow, тому потрібно створити новий клас. */
+@utility bold-shadow-bright-foreground {
+  text-shadow:
+    0 0 1px var(--color-bright-foreground),
+    0 0 1px var(--color-bright-foreground),
+    0 0 1px var(--color-bright-foreground);
+}
+@utility bold-shadow-dark-foreground {
+  text-shadow:
+    0 0 1px var(--color-dark-foreground),
+    0 0 1px var(--color-dark-foreground),
+    0 0 1px var(--color-dark-foreground);
+}
+
 body, html {
   background: var(--color-background);
   color: var(--color-bright-foreground);
