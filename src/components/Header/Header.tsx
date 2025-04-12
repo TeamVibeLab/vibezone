@@ -30,9 +30,9 @@ export default function Header() {
             max-w-8xl">
                 <LogoImage bright={false} extraClassName="px-4"/>
 
-                <nav className={`flex flex-row`}>
+                <nav className={`flex flex-row gap-x-4`}>
                     {headerWebsiteLinks.map(item => (
-                        <a className="text-3xl text-bold text-dark-foreground transition hover:opacity-75" key={item.text} {...item}>{item.text}</a>
+                        <a className="text-3xl text-bold text-dark-foreground transition hover:font-extrabold" key={item.text} {...item}>{item.text}</a>
                     ))}
                 </nav>
             </div>
