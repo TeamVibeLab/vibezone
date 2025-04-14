@@ -17,10 +17,14 @@
   text-shadow:
     0 0 1px var(--color-bright-foreground),
     0 0 1px var(--color-bright-foreground),
+    0 0 1px var(--color-bright-foreground),
+    0 0 1px var(--color-bright-foreground),
     0 0 1px var(--color-bright-foreground);
 }
 @utility bold-shadow-dark-foreground {
   text-shadow:
+    0 0 1px var(--color-dark-foreground),
+    0 0 1px var(--color-dark-foreground),
     0 0 1px var(--color-dark-foreground),
     0 0 1px var(--color-dark-foreground),
     0 0 1px var(--color-dark-foreground);

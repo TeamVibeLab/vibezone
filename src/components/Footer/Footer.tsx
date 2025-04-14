@@ -77,7 +77,7 @@ function NavLinks({ title, linkParams } : { title: string, linkParams: Array<Hyp
             <p className="text-xl font-bold">{title}</p>
             <nav className={`flex md:flex-col max-md:flex-row md:gap-y-0.5 max-md:gap-x-2`}>
                 {linkParams.map(item => (
-                    <a className="text-base text-bright-foreground transition hover:bold-shadow-bright-foreground" key={item.text} {...item}>{item.text}</a>
+                    <a className="text-base text-bright-foreground hover:bold-shadow-bright-foreground" key={item.text} {...item}>{item.text}</a>
                 ))}
             </nav>
         </div>
