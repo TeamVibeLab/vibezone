@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import LogoImage from "@/components/LogoImage/LogoImage"
@@ -23,9 +25,9 @@ const headerWebsiteLinks = [
     },
 ];
 
-const [displayMenuSmall, setDisplayMenuSmall] = useState(false);
-
 export default function Header() {
+    const [displayMenuSmall, setDisplayMenuSmall] = useState(false);
+    
     return (
         <header className="z-100
         flex justify-center
