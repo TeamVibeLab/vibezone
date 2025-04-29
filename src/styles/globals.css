@@ -7,7 +7,9 @@
   --color-dark-foreground: #17141a;
 
   --color-button: #b69dff;
+  --color-button-highlight: #c850ff;
   --color-link: #3acdff;
+  --color-link-highlight: #2a6cf1;
 
   --font-play: "Play", sans-serif;
 }
