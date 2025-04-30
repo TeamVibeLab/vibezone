@@ -1,12 +1,19 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const router = useRouter()
+
   return (
     <div className="w-4/5">
       <section className="p-15
       flex flex-col gap-y-25
       rounded-4xl bg-bright-foreground">
-        <button className="w-auto h-auto p-8 mx-auto
+        <button 
+        onClick={(e) => {router.push("/locations")}}
+        className="w-auto h-auto p-8 mx-auto
         rounded-4xl bg-button hover:bg-button-highlight
         text-2xl text-white
         flex justify-between items-center gap-x-4">
