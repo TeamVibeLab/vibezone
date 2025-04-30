@@ -4,11 +4,11 @@ export default function LogoImage({ bright, extraClassName }: { bright: boolean,
 {
     return (
     <Image
-        src={`/images/logo-${bright ? "white" : "black"}.png`}
+        src={`/images/logo.png`}
         alt="Логотип VibeZone"
         width={1007}
         height={171}
-        className={`w-60 object-center ${extraClassName}`}
+        className={`w-60 object-center ${bright && "invert"} ${extraClassName}`}
     />
     );
 }

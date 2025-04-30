@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col h-screen">
         <Header/>
-        <main className="flex justify-center flex-grow">{children}</main>
+        <main className="flex justify-center grow">{children}</main>
         <Footer/>
       </body>
     </html>
