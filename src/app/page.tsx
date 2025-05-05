@@ -3,6 +3,20 @@
 import Image from "next/image";
 import { useRouter } from 'next/navigation'
 
+import { getFirestore, collection, getDocs } from "firebase/firestore"
+
+import firebaseApp from "@/firebase/app"
+
+const firestore = getFirestore(firebaseApp)
+const collectionRef = collection(firestore, "locations")
+getDocs(collectionRef).then((snapshot) => {
+  let data = []
+  snapshot.docs.forEach((doc) => {
+    data.push({ ...doc.data(), id: doc.id })
+  })
+  console.log(data)
+})
+
 export default function Home() {
   const router = useRouter()
 
