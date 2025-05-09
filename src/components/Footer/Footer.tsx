@@ -31,7 +31,7 @@ const footerExternalLinks = [
 export default function Footer() {
     return (
         <footer className="mx-2 my-3 border-4 border-white rounded-4xl" >
-            etsttestsetest
+            
         </footer>
     )
 }
