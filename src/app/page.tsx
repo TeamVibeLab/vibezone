@@ -23,8 +23,9 @@ export default function Home() {
               object-bottom object-cover"
               key={i}
           />
-          <h2 className="absolute bottom-5 right-5
-          text-4xl text-center font-bold text-red-500">Test</h2>
+          <p className="absolute bottom-5 right-5
+          select-none
+          text-4xl text-center font-bold text-bright-foreground">Test</p>
         </div>
         /*<Image
               src={`/images/example_location_image.jpg`}
@@ -72,7 +73,7 @@ export default function Home() {
         rounded-4xl bg-bright-foreground
         text-dark-foreground">
         <p className="text-4xl">Топ місць цього тижня!</p>
-        <ul className="flex w-full snap-x snap-mandatory gap-6 overflow-x-auto">
+        <ul className="flex w-full snap-x snap-mandatory gap-6 overflow-x-auto px-4">
           {rows}
         </ul>
       </section>
