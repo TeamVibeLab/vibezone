@@ -1,11 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from 'next/navigation'
 
 export default function Home() {
-  const router = useRouter()
-
   const rows = [];
   for (let i = 0; i < 16; i++) {
       rows.push(
@@ -65,7 +62,7 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col items-center
-        w-1/2 mx-auto m-5 p-5
+        lg:w-2/3 md:w-3/4 max-md:w-full mx-auto m-5 p-5
         rounded-4xl bg-bright-foreground
         text-dark-foreground">
         <p className="text-4xl">Топ місць цього тижня!</p>

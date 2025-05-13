@@ -32,9 +32,9 @@ export default function Header() {
         <header className={`z-[100]
         flex justify-center
         pt-4 pb-4 mb-3 px-2 w-full
-        md:sticky
+        md:fixed
         ${displayMenuSmall ? `max-md:grow max-md:min-h-screen max-md:fixed
-            max-md:justify-start` : `max-md:sticky`}
+            max-md:justify-start` : `max-md:fixed`}
         top-0 left-0 right-0
         rounded-b-4xl bg-bright-foreground`}>
             <div className="flex flex-col w-full gap-y-2">
