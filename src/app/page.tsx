@@ -9,10 +9,11 @@ export default function Home() {
   const rows = [];
   for (let i = 0; i < 16; i++) {
       rows.push(
-        <div key={i} className="w-85 h-128
+        <a key={i} className="w-85 h-128
         shrink-0
         relative
-        snap-center">
+        snap-center"
+        href="/location">
           <Image
               src={`/images/example_location_image.jpg`}
               alt="Фотографія локації"
@@ -25,19 +26,14 @@ export default function Home() {
           />
           <p className="absolute bottom-5 right-5
           select-none
-          text-4xl text-center font-bold text-bright-foreground">Test</p>
-        </div>
-        /*<Image
-              src={`/images/example_location_image.jpg`}
-              alt="Фотографія локації"
-              width={5233}
-              height={3758}
-              className="border-6 rounded-4xl border-dark-foreground
-              w-85 h-128 
-              object-bottom object-cover
-              snap-center"
-              key={i}
-          />*/
+          text-2xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">Адреса</p>
+          <p className="absolute bottom-5 left-5
+          select-none
+          text-3xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">Назва</p>
+          <p className="absolute bottom-15 left-5
+          select-none
+          text-xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">Ціна</p>
+        </a>
     );
   }
 
@@ -46,8 +42,8 @@ export default function Home() {
       <section className="p-15 m-5
       flex flex-col gap-y-25
       rounded-4xl bg-bright-foreground">
-        <button 
-        onClick={(e) => {router.push("/locations")}}
+        <a 
+        href="/locations"
         className="w-auto h-auto p-8 mx-auto
         rounded-4xl bg-button hover:bg-button-highlight
         text-2xl text-bright-foreground
@@ -61,7 +57,7 @@ export default function Home() {
               height={128}
               className="w-8 object-center invert"
           /></span>
-        </button>
+        </a>
         <div className="lg:w-1/2 max-lg:w-full
         text-4xl font-bold text-dark-foreground">
         Твій студентський путівник у Львові! Знаходь найкращі місця для відпочинку, натхнення та розваг
@@ -69,11 +65,13 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col items-center
-        w-1/2 mx-auto m-5
+        w-1/2 mx-auto m-5 p-5
         rounded-4xl bg-bright-foreground
         text-dark-foreground">
         <p className="text-4xl">Топ місць цього тижня!</p>
-        <ul className="flex w-full snap-x snap-mandatory gap-6 overflow-x-auto px-4">
+        <ul className="w-full px-4
+        flex gap-6
+        snap-x snap-mandatory overflow-x-auto no-scrollbar">
           {rows}
         </ul>
       </section>
