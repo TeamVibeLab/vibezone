@@ -3,6 +3,7 @@
 
 import PlaceCard from './PlaceCard'
 import { Place } from './PlaceCard';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import React, { useState } from 'react';
 
@@ -167,18 +168,18 @@ export default function VikasPage() {
       imageUrl: 'place2.jpg',
     },
     {
-      name: 'Центральна бібліотека',
-      address: 'пл. Ринок, 10',
+      name: 'Студентський парк',
+      address: 'академіка Сахарова, 7',
       price: 'Безкоштовно',
-      category: 'Бібліотека',
-      imageUrl: 'place1.jpeg',
+      category: 'Культурні місця',
+      imageUrl: 'p4.jpg',
     },
     {
-      name: 'Центральна бібліотека',
-      address: 'пл. Ринок, 10',
-      price: 'Безкоштовно',
-      category: 'Бібліотека',
-      imageUrl: 'place2.jpg',
+      name: 'IQ Pizza',
+      address: 'вул. Княги Ольги, 69а | вул. Пасічна, 55',
+      price: 'від 150 грн',
+      category: 'Кафе',
+      imageUrl: 'p5.jpg',
     },
     {
       name: 'Коворкінг Простір',
@@ -188,11 +189,11 @@ export default function VikasPage() {
       imageUrl: 'place1.jpeg',
     },
     {
-      name: 'Затишне Кафе',
-      address: 'вул. Лесі Українки, 3',
-      price: 'від 50 грн',
+      name: 'Sette Coffee',
+      address: 'вул. Степана Бандери, 7',
+      price: 'від 30 грн',
       category: 'Кафе',
-      imageUrl: 'place1.jpeg',
+      imageUrl: 'p3.jpg',
     },
     {
       name: 'Оглядова вежа на Львівській ратуші',
@@ -233,7 +234,7 @@ const currentPlaces = places.slice(startIndex, endIndex);
       </header>
       
       
-      <main className="mt-6">
+      <main className="mt-12">
         <h1 className="text-3xl font-bold text-center text-neutral-800 mb-5">Місця які варто відвідати!</h1>
 
         <div className="h-px bg-white my-4" />
@@ -253,12 +254,23 @@ const currentPlaces = places.slice(startIndex, endIndex);
 
         <div className="h-px bg-white my-4" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <AnimatePresence mode="wait">
+  <motion.div
+    key={currentPage} // ключ для анімації
+    initial={{ opacity: 0, x: 100 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: -100 }}
+    transition={{ duration: 0.5 }}
+    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+  >
+    {currentPlaces.map((place: Place, index: number) => (
+      <PlaceCard key={index} place={place} />
+    ))}
+  </motion.div>
+</AnimatePresence>
 
-        {currentPlaces.map((place: Place, index: number) => (
-          <PlaceCard key={index} place={place} />
-        ))}
-      </div>
+
+
 
       <div className="flex justify-center mt-8 items-center space-x-6 text-white text-lg font-medium">
   <button
