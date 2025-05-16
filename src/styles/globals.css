@@ -32,6 +32,16 @@
     0 0 1px var(--color-dark-foreground);
 }
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 body, html {
   background: var(--color-background);
   color: var(--color-bright-foreground);
