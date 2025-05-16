@@ -1,66 +1,29 @@
 "use client";
 
+import { useEffect, useState, useRef } from "react";
+
 import Image from "next/image";
 
 import { getFirestore, collection, getDocs } from "firebase/firestore"
 
 import firebaseApp from "@/firebase/app"
 
-const firestore = getFirestore(firebaseApp)
-const collectionRef = collection(firestore, "locations")
-getDocs(collectionRef).then((snapshot) => {
-  let data = []
-  snapshot.docs.forEach((doc) => {
-    data.push({ ...doc.data(), id: doc.id })
-  })
-  console.log(data)
-})
-
-import { getFirestore, collection, getDocs } from "firebase/firestore"
-
-import firebaseApp from "@/firebase/app"
-
-const firestore = getFirestore(firebaseApp)
-const collectionRef = collection(firestore, "locations")
-getDocs(collectionRef).then((snapshot) => {
-  let data = []
-  snapshot.docs.forEach((doc) => {
-    data.push({ ...doc.data(), id: doc.id })
-  })
-  console.log(data)
-})
-
 export default function Home() {
-  const rows = [];
-  for (let i = 0; i < 16; i++) {
-      rows.push(
-        <a key={i} className="w-[340px] h-128
-        shrink-0
-        relative
-        snap-center"
-        href="/location">
-          <Image
-              src={`/images/example_location_image.jpg`}
-              alt="Фотографія локації"
-              width={5233}
-              height={3758}
-              className="border-6 rounded-4xl border-dark-foreground
-              w-full h-full
-              object-bottom object-cover"
-              key={i}
-          />
-          <p className="absolute bottom-5 right-5
-          select-none
-          text-2xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">Адреса</p>
-          <p className="absolute bottom-5 left-5
-          select-none
-          text-3xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">Назва</p>
-          <p className="absolute bottom-15 left-5
-          select-none
-          text-xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">Ціна</p>
-        </a>
-    );
-  }
+  const [locations, setLocations] = useState([]);
+
+  useEffect(() => {
+    const fetchLocations = async () => {
+      const firestore = getFirestore(firebaseApp);
+      const collectionRef = collection(firestore, "locations");
+      const snapshot = await getDocs(collectionRef);
+      const data = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setLocations(data);
+    }
+    fetchLocations();
+  }, [])
 
   const containerRef = useRef<HTMLUListElement>(null);
 
@@ -105,9 +68,36 @@ export default function Home() {
         <p className="text-4xl">Топ місць цього тижня!</p>
         <ul className="w-full px-4
         flex gap-6
-        snap-x snap-mandatory overflow-x-scroll scroll-smooth"
+        snap-x snap-mandatory overflow-x-auto no-scrollbar scroll-smooth"
         ref={containerRef}>
-          {rows}
+          {
+          locations.map((location, index) => (
+          <a key={index} className="w-[340px] h-128
+          shrink-0
+          relative
+          snap-center"
+          href="/location">
+            <Image
+                src={`/images/example_location_image.jpg`}
+                alt="Фотографія локації"
+                width={5233}
+                height={3758}
+                className="border-6 rounded-4xl border-dark-foreground
+                w-full h-full
+                object-bottom object-cover"
+                key={index}
+            />
+            <p className="absolute bottom-5 right-5
+            select-none
+            text-2xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">{location.address}</p>
+            <p className="absolute bottom-5 left-5
+            select-none
+            text-3xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">{location.name}</p>
+            <p className="absolute bottom-15 left-5
+            select-none
+            text-xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">{location.price}</p>
+          </a>
+          ))}
         </ul>
         <div className="flex gap-x-6 m-4">
           <button className="rounded-2xl bg-button hover:bg-button-highlight
