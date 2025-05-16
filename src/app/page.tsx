@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 
+import { useState, useRef } from "react";
 export default function Home() {
   const rows = [];
   for (let i = 0; i < 16; i++) {
       rows.push(
-        <a key={i} className="w-85 h-128
+        <a key={i} className="w-[340px] h-128
         shrink-0
         relative
         snap-center"
@@ -33,6 +34,15 @@ export default function Home() {
         </a>
     );
   }
+
+  const containerRef = useRef<HTMLUListElement>(null);
+
+  const addScrollPosition = (scrollAmount: number) => {
+    if (containerRef.current)
+    {
+      containerRef.current.scrollLeft += scrollAmount;
+    }
+  };
 
   return (
     <div className="w-4/5">
@@ -68,9 +78,24 @@ export default function Home() {
         <p className="text-4xl">Топ місць цього тижня!</p>
         <ul className="w-full px-4
         flex gap-6
-        snap-x snap-mandatory overflow-x-auto no-scrollbar">
+        snap-x snap-mandatory overflow-x-scroll scroll-smooth"
+        ref={containerRef}>
           {rows}
         </ul>
+        <div className="flex gap-x-6 m-4">
+          <button className="rounded-2xl bg-button hover:bg-button-highlight
+          w-auto h-auto py-3 px-5 mx-auto
+          text-2xl text-bright-foreground"
+          onClick={()=>addScrollPosition(-350)}>
+            &#8592;
+          </button>
+          <button className="rounded-2xl bg-button hover:bg-button-highlight
+          w-auto h-auto py-3 px-5 mx-auto
+          text-2xl text-bright-foreground"
+          onClick={()=>addScrollPosition(350)}>
+            &#8594;
+          </button>
+        </div>
       </section>
     </div>
   );
