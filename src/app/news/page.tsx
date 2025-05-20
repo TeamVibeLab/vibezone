@@ -33,6 +33,7 @@ export default function News() {
                     newsPosts.map((post, index) => (
                         <NewsPost
                             data={post}
+                            id={index}
                             key={index}
                         />
                     )

@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-export default function NewsPost({ data }: { data: string[] }) {
+export default function NewsPost({ id, data }: { id: string, data: string[] }) {
     return (
-        <article className="p-4
+        <a className="p-4
         rounded-lg bg-bright-foreground
         text-dark-foreground
-        grid grid-cols-3 gap-2 items-center
-        ">
+        grid grid-cols-3 gap-2 items-center"
+        href={`/post?id=${id}`}>
             <Image
                 src={"/images/example_location_image.jpg"}
                 alt="Логотип VibeZone"
@@ -22,6 +22,6 @@ export default function NewsPost({ data }: { data: string[] }) {
             text-sm">{data.date.toDate().toDateString()}</p>
             <p className="col-span-2
             text-2xl font-bold text-right">Читати далі</p>
-        </article>
+        </a>
     )
 }
