@@ -19,7 +19,7 @@ export default function NewsPost({ data }: { data: string[] }) {
             <p className="col-span-2
             text-2xl font-bold">{data.description}</p>
             <p className="col-span-2 self-start
-            text-sm">{data.date}</p>
+            text-sm">{data.date.toDate().toDateString()}</p>
             <p className="col-span-2
             text-2xl font-bold text-right">Читати далі</p>
         </article>

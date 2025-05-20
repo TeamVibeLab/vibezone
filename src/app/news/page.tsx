@@ -1,18 +1,42 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+import { getFirestore, collection, getDocs } from "firebase/firestore"
+
 import NewsPost from "@/components/NewsPost/NewsPost"
+import firebaseApp from "@/firebase/app"
 
 export default function News() {
+    const [newsPosts, setNewsPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchLocations = async () => {
+      const firestore = getFirestore(firebaseApp);
+      const collectionRef = collection(firestore, "news_posts");
+      const snapshot = await getDocs(collectionRef);
+      const data = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setNewsPosts(data);
+    }
+    fetchLocations();
+  }, [])
+
     return (
         <section className="w-3/5 p-4
         rounded-lg bg-bright-foreground/50">
 
             <div className="flex flex-col gap-4">
-                <NewsPost
-                    data={ {
-                        title: "Lorem Ipsum",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nulla sit amet sollicitudin semper.",
-                        date: "January 1st, 2000"
-                    } }
-                />
+                {
+                    newsPosts.map((post, index) => (
+                        <NewsPost
+                            data={post}
+                            key={index}
+                        />
+                    )
+                )}
             </div>
         </section>
     );
