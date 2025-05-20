@@ -7,39 +7,11 @@ export default function News() {
 
             <div className="flex flex-col gap-4">
                 <NewsPost
-                    title="Lorem Ipsum"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nulla sit amet sollicitudin semper. "
-                    date="January 1st, 2000"
-                />
-                <NewsPost
-                    title="Lorem Ipsum"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nulla sit amet sollicitudin semper. "
-                    date="January 1st, 2000"
-                />
-                <NewsPost
-                    title="Lorem Ipsum"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nulla sit amet sollicitudin semper. "
-                    date="January 1st, 2000"
-                />
-                <NewsPost
-                    title="Lorem Ipsum"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nulla sit amet sollicitudin semper. "
-                    date="January 1st, 2000"
-                />
-                <NewsPost
-                    title="Lorem Ipsum"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nulla sit amet sollicitudin semper. "
-                    date="January 1st, 2000"
-                />
-                <NewsPost
-                    title="Lorem Ipsum"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nulla sit amet sollicitudin semper. "
-                    date="January 1st, 2000"
-                />
-                <NewsPost
-                    title="Lorem Ipsum"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nulla sit amet sollicitudin semper. "
-                    date="January 1st, 2000"
+                    data={ {
+                        title: "Lorem Ipsum",
+                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nulla sit amet sollicitudin semper.",
+                        date: "January 1st, 2000"
+                    } }
                 />
             </div>
         </section>

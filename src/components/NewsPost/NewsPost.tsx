@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function NewsPost({ title, description, date }: { title: string, description: string, date: string }) {
+export default function NewsPost({ data }: { data: string[] }) {
     return (
         <article className="p-4
         rounded-lg bg-bright-foreground
@@ -15,11 +15,11 @@ export default function NewsPost({ title, description, date }: { title: string, 
                 className={"w-full p-2 object-center row-span-4 rounded-3xl"}
             />
             <p className="col-span-2
-            text-4xl font-bold">{title}</p>
+            text-4xl font-bold">{data.title}</p>
             <p className="col-span-2
-            text-2xl font-bold">{description}</p>
+            text-2xl font-bold">{data.description}</p>
             <p className="col-span-2 self-start
-            text-sm">{date}</p>
+            text-sm">{data.date}</p>
             <p className="col-span-2
             text-2xl font-bold text-right">Читати далі</p>
         </article>
