@@ -140,32 +140,32 @@ export default function VikasPage() {
       imageUrl: 'p2.jpg',
     },
     {
-      name: 'Коворкінг Простір',
-      address: 'вул. Незалежності, 15',
-      price: '200 грн/день',
-      category: 'Коворкінг',
-      imageUrl: 'place1.jpeg',
+      name: '“Кумпель”',
+      address: 'площа Митна, 6',
+      price: 'від 40 грн',
+      category: 'Кафе',
+      imageUrl: 'p9.jpeg',
     },
     {
-      name: 'Затишне Кафе',
-      address: 'вул. Лесі Українки, 3',
+      name: 'П`яна вишня',
+      address: 'Кам`яниця Гаслярівська, площа Ринок, 11',
+      price: 'від 150 грн',
+      category: 'Розваги',
+      imageUrl: 'p10.jpg',
+    },
+    {
+      name: 'Epic Chicken Cafe',
+      address: 'вул. Галицька, 15',
       price: 'від 50 грн',
       category: 'Кафе',
-      imageUrl: 'place2.jpg',
+      imageUrl: 'p8.jpeg',
     },
     {
-      name: 'Центральна бібліотека',
-      address: 'пл. Ринок, 10',
-      price: 'Безкоштовно',
-      category: 'Бібліотека',
-      imageUrl: 'place1.jpeg',
-    },
-    {
-      name: 'Центральна бібліотека',
-      address: 'пл. Ринок, 10',
-      price: 'Безкоштовно',
-      category: 'Бібліотека',
-      imageUrl: 'place2.jpg',
+      name: 'Вуйко Сем',
+      address: ' вул. Братів Рогатинців, 23',
+      price: 'від 100 грн',
+      category: 'Кафе',
+      imageUrl: 'p7.jpg',
     },
     {
       name: 'Студентський парк',
@@ -182,11 +182,11 @@ export default function VikasPage() {
       imageUrl: 'p5.jpg',
     },
     {
-      name: 'Коворкінг Простір',
-      address: 'вул. Незалежності, 15',
-      price: '200 грн/день',
-      category: 'Коворкінг',
-      imageUrl: 'place1.jpeg',
+      name: ' “Вітальня”',
+      address: 'вул. Академіка Богомольця, 6/1',
+      price: 'від 35 грн',
+      category: 'Кафе',
+      imageUrl: 'p6.jpg',
     },
     {
       name: 'Sette Coffee',
@@ -223,19 +223,14 @@ const currentPlaces = places.slice(startIndex, endIndex);
   <div className="container mx-auto px-4 py-8 font-sans" >
       <header className="flex justify-between items-center py-4">
         <img src="/logo1.png" alt="Logotype" className="h-10 w-auto rotate-27" />
-        <nav>
-          <ul className="flex space-x-6">
-            <li><a href="#" className="text-gray-900 font-semibold hover:text-blue-500">Головна</a></li>
-            <li><a href="#" className="text-gray-900 font-semibold hover:text-blue-500">Локації</a></li>
-            {/* Додамо інші посилання пізніше */}
-          </ul>
+        
          
-        </nav>
+        
       </header>
       
       
       <main className="mt-12">
-        <h1 className="text-3xl font-bold text-center text-neutral-800 mb-5">Місця які варто відвідати!</h1>
+        <h1 className="text-3xl font-bold text-center text-gray-300 mb-5">Місця які варто відвідати!</h1>
 
         <div className="h-px bg-white my-4" />
         
