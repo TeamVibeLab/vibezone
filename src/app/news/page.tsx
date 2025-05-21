@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-import { getFirestore, collection, getDocs } from "firebase/firestore"
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
-import NewsPost from "@/components/NewsPost/NewsPost"
-import firebaseApp from "@/firebase/app"
+import NewsPost from "@/components/NewsPost/NewsPost";
+import firebaseApp from "@/firebase/app";
 
 export default function News() {
-    const [newsPosts, setNewsPosts] = useState([]);
+  const [newsPosts, setNewsPosts] = useState([]);
 
   useEffect(() => {
     const fetchLocations = async () => {
@@ -33,7 +33,6 @@ export default function News() {
                     newsPosts.map((post, index) => (
                         <NewsPost
                             data={post}
-                            id={index}
                             key={index}
                         />
                     )

@@ -4,9 +4,9 @@ import { useEffect, useState, useRef } from "react";
 
 import Image from "next/image";
 
-import { getFirestore, collection, getDocs } from "firebase/firestore"
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
-import firebaseApp from "@/firebase/app"
+import firebaseApp from "@/firebase/app";
 
 export default function Home() {
   const [locations, setLocations] = useState([]);
