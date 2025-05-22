@@ -206,10 +206,27 @@ export default function VikasPage() {
 
   const itemsPerPage = 9;
 const [currentPage, setCurrentPage] = useState(1);
-const totalPages = Math.ceil(places.length / itemsPerPage);
+const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+const categories = [
+  'Коворкінг',
+  'Бібліотеки',
+  'Бюджетне харчування',
+  'Кафе',
+  'Розваги',
+  'Спорт',
+  'Культурні місця',
+];
+
+const filteredPlaces = selectedCategory
+  ? places.filter(place => place.category === selectedCategory)
+  : places;
+
+const totalPages = Math.ceil(filteredPlaces.length / itemsPerPage);
 const startIndex = (currentPage - 1) * itemsPerPage;
 const endIndex = startIndex + itemsPerPage;
-const currentPlaces = places.slice(startIndex, endIndex);
+const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
+
  
   return (
     <div
@@ -236,15 +253,46 @@ const currentPlaces = places.slice(startIndex, endIndex);
         
 
         <div className="mb-6 overflow-x-auto pb-2">
-          <div className="flex space-x-4">
-            <button className="bg-gray-100 text-gray-700 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none hover:bg-gray-200">Коворкінги</button>
-            <button className="bg-gray-100 text-gray-700 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none hover:bg-gray-200">Бібліотеки</button>
-            <button className="bg-gray-100 text-gray-700 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none hover:bg-gray-200">Бюджетне харчування</button>
-            <button className="bg-gray-100 text-gray-700 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none hover:bg-gray-200">Кафе</button>
-            <button className="bg-gray-100 text-gray-700 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none hover:bg-gray-200">Розваги</button>
-            <button className="bg-gray-100 text-gray-700 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none hover:bg-gray-200">Спорт</button>
-            <button className="bg-gray-100 text-gray-700 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none hover:bg-gray-200">Культурні місця</button>
-          </div>
+
+        
+      
+
+<div className="mb-6 overflow-x-auto pb-2">
+  <div className="flex space-x-4">
+  <button
+  onClick={() => {
+    setSelectedCategory(null);
+    setCurrentPage(1);
+  }}
+  className={`px-4 py-2 text-sm rounded-full border focus:outline-none transition cursor-pointer ${
+    selectedCategory === null
+      ? 'bg-purple-300 text-gray-900'
+      : 'bg-gray-100 text-gray-900 hover:bg-purple-200'
+  }`}
+>
+  Усі категорії
+</button>
+
+
+    {categories.map((category) => (
+      <button
+        key={category}
+        onClick={() => {
+          setSelectedCategory(category);
+          setCurrentPage(1);
+        }}
+        className={`px-4 py-2 text-sm rounded-full border focus:outline-none transition cursor-pointer ${
+          selectedCategory === category
+            ? 'bg-purple-200 text-gray-900'
+            : 'bg-gray-100 text-gray-900 hover:bg-purple-100'
+        }`}
+      >
+        {category}
+      </button>
+    ))}
+  </div>
+</div>
+
         </div>
 
         <div className="h-px bg-white my-4" />
