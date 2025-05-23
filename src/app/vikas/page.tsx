@@ -257,7 +257,7 @@ const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
  
   return (
     <div
-    className="min-h-screen bg-top bg-cover bg-no-repeat"
+    className="min-h-screen w-full bg-cover bg-center bg-fixed bg-no-repeat text-2xl"
     style={{ 
       backgroundImage: "url('/fon1.png')",
       backgroundSize: 'cover',
@@ -266,7 +266,7 @@ const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
   >
   <div className="container mx-auto px-4 py-8 font-sans" >
       <header className="flex justify-between items-center py-4">
-        <img src="/logo1.png" alt="Logotype" className="h-10 w-auto rotate-27 translate-y-8" />
+        <img src="/logo1.png" alt="Logotype" className="h-16 w-auto rotate-27 translate-y-23" />
         
          
         
@@ -274,8 +274,8 @@ const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
       
     
       
-      <main className="mt-10">
-        <h1 className="text-3xl font-bold text-center text-gray-300 mb-7">Місця які варто відвідати!</h1>
+      <main className="mt-7">
+        <h1 className="text-4xl font-bold text-center text-gray-300 mb-18">Місця які варто відвідати!</h1>
 
         <div className="h-px bg-white my-4" />
         
@@ -285,14 +285,14 @@ const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
         
       
 
-<div className="mb-6 overflow-x-auto pb-2">
-  <div className="flex space-x-4">
+<div className="mb-1 overflow-x-auto pb-2">
+  <div className="flex space-x-8">
   <button
   onClick={() => {
     setSelectedCategory(null);
     setCurrentPage(1);
   }}
-  className={`px-4 py-2 text-sm rounded-full border focus:outline-none transition cursor-pointer ${
+  className={`px-10 py-3 text-xl rounded-full border focus:outline-none transition cursor-pointer ${
     selectedCategory === null
       ? 'bg-gradient-to-r from-blue-400 to-purple-400 text-gray-900'
       : 'bg-gradient-to-r from-blue-300 to-purple-300 text-gray-800 hover:bg-gradient-to-r hover:from-cyan-300 hover:to-puple-300 hover:text-gray-900'
@@ -309,7 +309,7 @@ const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
           setSelectedCategory(category);
           setCurrentPage(1);
         }}
-        className={`px-4 py-2 text-sm rounded-full border focus:outline-none transition cursor-pointer ${
+        className={`px-6 py-4 text-xl rounded-full border focus:outline-none transition cursor-pointer ${
           selectedCategory === category
             ? 'bg-gradient-to-r from-blue-400 to-purple-400 text-gray-900'
             : 'bg-gradient-to-r from-blue-300 to-purple-300 text-gray-800 hover:bg-gradient-to-r hover:from-cyan-300 hover:to-puple-300 hover:text-gray-900'

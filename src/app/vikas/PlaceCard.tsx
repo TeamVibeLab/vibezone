@@ -15,10 +15,10 @@ interface PlaceCardProps {
 
 export default function PlaceCard({ place }: PlaceCardProps) {
   return (
-    <div className="w-full max-w-xs rounded-xl overflow-hidden shadow-md">
-      <img src={place.imageUrl} alt={place.name} className="w-full h-72 object-cover" />
-      <div className="bg-violet-100 p-4 text-sm">
-        <h4 className="text-gray-800 font-semibold text-lg">{place.name}</h4>
+    <div className="w-full rounded-xl overflow-hidden shadow-md">
+      <img src={place.imageUrl} alt={place.name} className="w-full h-100 object-cover" />
+      <div className="bg-violet-100 p-8 text-l">
+        <h2 className="text-gray-800 font-semibold text-l">{place.name}</h2>
         <p className="text-gray-600">{place.address}</p>
         <p className="text-gray-800">{place.price}</p>
         <p className="text-gray-500 italic">{place.category}</p>
