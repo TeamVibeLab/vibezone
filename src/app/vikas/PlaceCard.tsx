@@ -6,6 +6,7 @@ export type Place = {
   price: string;
   category: string;
   imageUrl: string;
+  link: string;
 };
 
 interface PlaceCardProps {
@@ -21,8 +22,14 @@ export default function PlaceCard({ place }: PlaceCardProps) {
         <p className="text-gray-600">{place.address}</p>
         <p className="text-gray-800">{place.price}</p>
         <p className="text-gray-500 italic">{place.category}</p>
-        <button className="mt-2 text-blue-600 hover:underline">Переглянути →</button>
+        <a
+  href={place.link}
+  className="mt-4 text-blue-500 underline hover:text-blue-700"
+>
+  Переглянути →
+</a>
+
       </div>
     </div>
-  );
+  )
 }

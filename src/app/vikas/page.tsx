@@ -19,83 +19,7 @@ export default function VikasPage() {
       price: 'від 80 грн',
       category: 'Кафе',
       imageUrl: 'pl1.png',
-    },
-    {
-      name: '“Містечко”',
-      address: 'вул. Вітовського, 1 / вул. Левицького, 2',
-      price: 'від 30 грн',
-      category: 'Кафе',
-      imageUrl: 'pl2.png',
-    },
-    {
-      name: 'Горіховий гай',
-      address: 'вул. Володимира Великого, 14А',
-      price: 'Безкоштовно',
-      category: 'Культурні місця',
-      imageUrl: 'pl10.jpg',
-    },
-    {
-      name: 'МолоДвіж',
-      address: 'Скорика, 31 (Чайковського, 31)',
-      price: 'Безкоштовно',
-      category: 'Коворкінг',
-      imageUrl: 'pl8.jpg',
-    },
-    {
-      name: 'New York Street Pizza',
-      address: 'вул. Червоної Калини, 36 / вул. Володимира Великого, 51',
-      price: 'від 75 грн',
-      category: 'Кафе',
-      imageUrl: 'pl9.jpg',
-    },
-    {
-      name: 'Грузинська випічка',
-      address: 'вул. Бандери, 45 / вул. Личаківська, 44',
-      price: 'від 30 грн',
-      category: 'Кафе',
-      imageUrl: 'pl3.jpg',
-    },
-    {
-      name: 'Шевченківський гай (музей)',
-      address: 'Личаківська (Чернеча гора, 1)',
-      price: 'Безкоштовно',
-      category: 'Культурні місця',
-      imageUrl: 'pl12.jpg',
-    },
-    {
-      name: 'Пузата Хата',
-      address: 'проспект Шевченка, 10 / вул. Січових Стрільців, 12',
-      price: 'від 20 грн',
-      category: 'Кафе',
-      imageUrl: 'pl4.jpg',
-    },
-    {
-      name: 'UStart Coworking',
-      address: 'вул. Шевченка, 111А',
-      price: 'Від 150 грн',
-      category: 'Коворкінг',
-      imageUrl: 'pl13.png',
-    },
-    {
-      name: 'Їдальня УКУ',
-      address: 'вул. Козельницька, 2А',
-      price: 'від 15 грн',
-      category: 'Бюджетне харчування',
-      imageUrl: 'pl5.jpg',
-    },
-    {
-      name: 'Добрий друг',
-      address: 'вул. Староєврейська, 12 / вул. Січових Стрільців, 3',
-      price: 'від 30 грн',
-      category: 'Кафе',
-      imageUrl: 'pl6.jpg',
-    },
-    {
-      name: 'Young Dovzhenko',
-      address: 'проспект Червоної Калини, 81 (2 поверх)',
-      price: 'Безкоштовно',
-      category: 'Коворкінг',
-      imageUrl: 'pl14.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Італійський дворик',
@@ -103,6 +27,95 @@ export default function VikasPage() {
       price: '20 грн',
       category: 'Культурні місця',
       imageUrl: 'pl15.jpg',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'Горіховий гай',
+      address: 'вул. Володимира Великого, 14А',
+      price: 'Безкоштовно',
+      category: 'Культурні місця',
+      imageUrl: 'pl10.jpg',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'МолоДвіж',
+      address: 'Скорика, 31 (Чайковського, 31)',
+      price: 'Безкоштовно',
+      category: 'Коворкінг',
+      imageUrl: 'pl8.jpg',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'New York Street Pizza',
+      address: 'вул. Червоної Калини, 36 / вул. Володимира Великого, 51',
+      price: 'від 75 грн',
+      category: 'Кафе',
+      imageUrl: 'pl9.jpg',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'Грузинська випічка',
+      address: 'вул. Бандери, 45 / вул. Личаківська, 44',
+      price: 'від 30 грн',
+      category: 'Кафе',
+      imageUrl: 'pl3.jpg',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'Шевченківський гай (музей)',
+      address: 'Личаківська (Чернеча гора, 1)',
+      price: 'Безкоштовно',
+      category: 'Культурні місця',
+      imageUrl: 'pl12.jpg',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'Пузата Хата',
+      address: 'проспект Шевченка, 10 / вул. Січових Стрільців, 12',
+      price: 'від 20 грн',
+      category: 'Кафе',
+      imageUrl: 'pl4.jpg',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'UStart Coworking',
+      address: 'вул. Шевченка, 111А',
+      price: 'Від 150 грн',
+      category: 'Коворкінг',
+      imageUrl: 'pl13.png',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'Їдальня УКУ',
+      address: 'вул. Козельницька, 2А',
+      price: 'від 15 грн',
+      category: 'Бюджетне харчування',
+      imageUrl: 'pl5.jpg',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'Добрий друг',
+      address: 'вул. Староєврейська, 12 / вул. Січових Стрільців, 3',
+      price: 'від 30 грн',
+      category: 'Кафе',
+      imageUrl: 'pl6.jpg',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'Young Dovzhenko',
+      address: 'проспект Червоної Калини, 81 (2 поверх)',
+      price: 'Безкоштовно',
+      category: 'Коворкінг',
+      imageUrl: 'pl14.jpg',
+      link : 'http://192.168.0.106:3000/bb'
+    },
+    {
+      name: 'Містечко',
+      address: 'вул. Вітовського, 1 / вул. Левицького, 2',
+      price: 'від 30 грн',
+      category: 'Кафе',
+      imageUrl: 'pl2.png',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Пиріжкова',
@@ -110,6 +123,7 @@ export default function VikasPage() {
       price: 'від 20 грн',
       category: 'Бюджетне харчування',
       imageUrl: 'pl7.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Твій ланч',
@@ -117,6 +131,7 @@ export default function VikasPage() {
       price: 'від 170 грн/1 комплексний обід',
       category: 'Кафе',
       imageUrl: 'p1.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Perfetto',
@@ -124,6 +139,7 @@ export default function VikasPage() {
       price: 'від 95 грн',
       category: 'Кафе',
       imageUrl: 'pl17.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Палац Потоцьких',
@@ -131,6 +147,7 @@ export default function VikasPage() {
       price: 'від 80 грн',
       category: 'Культурні місця',
       imageUrl: 'pl16.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Будинок вчених',
@@ -138,6 +155,7 @@ export default function VikasPage() {
       price: '50 грн',
       category: 'Культурні місця',
       imageUrl: 'p2.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: '“Кумпель”',
@@ -145,6 +163,7 @@ export default function VikasPage() {
       price: 'від 40 грн',
       category: 'Кафе',
       imageUrl: 'p9.jpeg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'П`яна вишня',
@@ -152,6 +171,7 @@ export default function VikasPage() {
       price: 'від 150 грн',
       category: 'Розваги',
       imageUrl: 'p10.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Epic Chicken Cafe',
@@ -159,6 +179,7 @@ export default function VikasPage() {
       price: 'від 50 грн',
       category: 'Кафе',
       imageUrl: 'p8.jpeg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Вуйко Сем',
@@ -166,6 +187,7 @@ export default function VikasPage() {
       price: 'від 100 грн',
       category: 'Кафе',
       imageUrl: 'p7.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Студентський парк',
@@ -173,6 +195,7 @@ export default function VikasPage() {
       price: 'Безкоштовно',
       category: 'Культурні місця',
       imageUrl: 'p4.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'IQ Pizza',
@@ -180,6 +203,7 @@ export default function VikasPage() {
       price: 'від 150 грн',
       category: 'Кафе',
       imageUrl: 'p5.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: ' “Вітальня”',
@@ -187,6 +211,7 @@ export default function VikasPage() {
       price: 'від 35 грн',
       category: 'Кафе',
       imageUrl: 'p6.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Sette Coffee',
@@ -194,6 +219,7 @@ export default function VikasPage() {
       price: 'від 30 грн',
       category: 'Кафе',
       imageUrl: 'p3.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     },
     {
       name: 'Оглядова вежа на Львівській ратуші',
@@ -201,6 +227,7 @@ export default function VikasPage() {
       price: '100 грн',
       category: 'Культурні місця',
       imageUrl: 'pl11.jpg',
+      link : 'http://192.168.0.106:3000/bb'
     }
   ];
 
@@ -239,20 +266,21 @@ const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
   >
   <div className="container mx-auto px-4 py-8 font-sans" >
       <header className="flex justify-between items-center py-4">
-        <img src="/logo1.png" alt="Logotype" className="h-10 w-auto rotate-27" />
+        <img src="/logo1.png" alt="Logotype" className="h-10 w-auto rotate-27 translate-y-8" />
         
          
         
       </header>
       
+    
       
-      <main className="mt-12">
-        <h1 className="text-3xl font-bold text-center text-gray-300 mb-5">Місця які варто відвідати!</h1>
+      <main className="mt-10">
+        <h1 className="text-3xl font-bold text-center text-gray-300 mb-7">Місця які варто відвідати!</h1>
 
         <div className="h-px bg-white my-4" />
         
 
-        <div className="mb-6 overflow-x-auto pb-2">
+        <div className="mb-1 overflow-x-auto pb-2">
 
         
       
@@ -266,8 +294,8 @@ const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
   }}
   className={`px-4 py-2 text-sm rounded-full border focus:outline-none transition cursor-pointer ${
     selectedCategory === null
-      ? 'bg-purple-300 text-gray-900'
-      : 'bg-gray-100 text-gray-900 hover:bg-purple-200'
+      ? 'bg-gradient-to-r from-blue-400 to-purple-400 text-gray-900'
+      : 'bg-gradient-to-r from-blue-300 to-purple-300 text-gray-800 hover:bg-gradient-to-r hover:from-cyan-300 hover:to-puple-300 hover:text-gray-900'
   }`}
 >
   Усі категорії
@@ -283,8 +311,8 @@ const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
         }}
         className={`px-4 py-2 text-sm rounded-full border focus:outline-none transition cursor-pointer ${
           selectedCategory === category
-            ? 'bg-purple-200 text-gray-900'
-            : 'bg-gray-100 text-gray-900 hover:bg-purple-100'
+            ? 'bg-gradient-to-r from-blue-400 to-purple-400 text-gray-900'
+            : 'bg-gradient-to-r from-blue-300 to-purple-300 text-gray-800 hover:bg-gradient-to-r hover:from-cyan-300 hover:to-puple-300 hover:text-gray-900'
         }`}
       >
         {category}
@@ -299,7 +327,7 @@ const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
 
         <AnimatePresence mode="wait">
   <motion.div
-    key={currentPage} // ключ для анімації
+    key={`${selectedCategory || 'all'}-${currentPage}`} // ключ для анімації
     initial={{ opacity: 0, x: 100 }}
     animate={{ opacity: 1, x: 0 }}
     exit={{ opacity: 0, x: -100 }}
