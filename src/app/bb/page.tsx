@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import Image from 'next/image';
+
 
 type PlaceDetailsProps = {};
 
@@ -16,6 +18,17 @@ const PlaceDetails: React.FC<PlaceDetailsProps> = () => {
   const handleBackClick = () => {
     router.push("http://192.168.0.103:3001/vikas");
   };
+// Додай перед return (після useState)
+const images = ["/images/place.jpg", "/images/place2.png", "/images/place3.png"];
+const [currentIndex, setCurrentIndex] = useState(0);
+
+const handlePrev = () => {
+  setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+};
+
+const handleNext = () => {
+  setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+};
 
   return (
     <div className="min-h-screen w-full bg-[url('/images/image.png')] bg-cover bg-center bg-no-repeat bg-fixed text-white">
@@ -43,14 +56,40 @@ const PlaceDetails: React.FC<PlaceDetailsProps> = () => {
 
         {/* Інформація */}
         <div className="flex flex-col sm:flex-row gap-6">
-          <div className="relative w-full sm:w-1/2 h-64 sm:h-72 rounded-lg overflow-hidden">
-            <Image
-              src="/images/place.jpg"
-              alt="Фото місця"
-              fill
-              className="object-cover"
-            />
-          </div>
+        {/* Карусель зображень */}
+<div className="relative w-full sm:w-1/2 h-64 sm:h-72 rounded-lg overflow-hidden">
+  <motion.div
+    key={currentIndex}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    className="w-full h-full absolute"
+  >
+    <Image
+      src={images[currentIndex]}
+      alt={`Зображення ${currentIndex + 1}`}
+      fill
+      className="object-cover"
+    />
+  </motion.div>
+
+  {/* Кнопки перемикання */}
+  <button
+    onClick={handlePrev}
+    className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-2 backdrop-blur"
+    aria-label="Попереднє зображення"
+  >
+    <ChevronLeft className="w-5 h-5" />
+  </button>
+  <button
+    onClick={handleNext}
+    className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-2 backdrop-blur"
+    aria-label="Наступне зображення"
+  >
+    <ChevronRight className="w-5 h-5" />
+  </button>
+</div>
+
 
           <div className="w-full sm:w-1/2 flex flex-col justify-between">
             <div>
