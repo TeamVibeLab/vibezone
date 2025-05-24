@@ -8,7 +8,7 @@ export default function NewsPost({ data }: { data: string[] }) {
         grid grid-cols-3 gap-2 items-center"
         href={`/post?id=${data.id}`}>
             <Image
-                src={"/images/example_location_image.jpg"}
+                src={`/images/${data.image_src}`}
                 alt="Логотип VibeZone"
                 width={5233}
                 height={3758}

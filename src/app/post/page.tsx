@@ -33,7 +33,7 @@ export default function Page() {
         rounded-lg bg-bright-foreground
         text-dark-foreground">
             <Image
-                src={`/images/example_location_image.jpg`}
+                src={`/images/${postData.image_src}`}
                 alt="Фотографія локації"
                 width={5233}
                 height={3758}
