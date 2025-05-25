@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        port: "",
+        pathname: "/TeamVibeLab/vibezone/**",
+      },
+    ],
+  }
 };
 
 export default nextConfig;
