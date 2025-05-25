@@ -28,7 +28,7 @@ export default function News() {
         <section className="w-3/5 p-4
         rounded-lg bg-bright-foreground/50">
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-12">
                 {
                     newsPosts.map((post, index) => (
                         <NewsPost
