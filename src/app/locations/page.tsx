@@ -12,8 +12,9 @@ export default function Locations() {
     const categories = Object.values(Category).filter(value => typeof value === 'number');
 
     const [enabledCategories, setEnabledCategories] = useState(() =>
-        Object.fromEntries(categories.map(category => [category, true]))
+        Object.fromEntries(categories.map(category => [category, false]))
     );
+    const allCategoriesDisabled = Object.values(enabledCategories).every(category => category == false);
 
     const [locations, setLocations] = useState([])
     useEffect(() => {
@@ -31,7 +32,7 @@ export default function Locations() {
     }, []);
 
     const displayedLocations = locations.filter(location =>
-        location.categories.some((category: number) => enabledCategories[category])
+        location.categories.some((category: number) => allCategoriesDisabled || enabledCategories[category])
     );
 
     return (
