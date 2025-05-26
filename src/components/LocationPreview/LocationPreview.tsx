@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Category, CategoryNames } from "@/constants/locations"
+import { CategoryNames } from "@/constants/locations"
 
 export default function LocationPreview({ data }: { data: { id: string; name: string; address: string; price: string; categories: number[] } }) {
     if (data.name.length > 64)

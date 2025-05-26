@@ -9,12 +9,11 @@ import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 import firebaseApp from "@/firebase/app";
 
-export default function Page() {
+export default function Post() {
     const [postData, setPostData] = useState([]);
 
     const searchParams = useSearchParams();
     const search = searchParams.get("id");
-    console.log(search);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,7 +25,6 @@ export default function Page() {
         }
         fetchData();
     }, [])
-    console.log(postData);
 
     return (
         <div className="w-4/5
