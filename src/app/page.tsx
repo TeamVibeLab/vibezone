@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 
+import TopWeekLocationPreview from "@/components/TopWeekLocationPreview/TopWeekLocationPreview";
 import firebaseApp from "@/firebase/app";
 
 export default function Home() {
@@ -72,31 +73,10 @@ export default function Home() {
         ref={containerRef}>
           {
           locations.map((location, index) => (
-          <a key={index} className="w-[340px] h-128
-          shrink-0
-          relative
-          snap-center"
-          href="/location">
-            <Image
-                src={`/images/example_location_image.jpg`}
-                alt="Фотографія локації"
-                width={5233}
-                height={3758}
-                className="border-6 rounded-4xl border-dark-foreground
-                w-full h-full
-                object-bottom object-cover"
+            <TopWeekLocationPreview
+                data={location}
                 key={index}
             />
-            <p className="absolute bottom-5 right-5
-            select-none
-            text-2xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">{location.address}</p>
-            <p className="absolute bottom-5 left-5
-            select-none
-            text-3xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">{location.name}</p>
-            <p className="absolute bottom-15 left-5
-            select-none
-            text-xl text-center font-bold text-bright-foreground bold-shadow-dark-foreground">{location.price}</p>
-          </a>
           ))}
         </ul>
         <div className="flex gap-x-6 m-4">

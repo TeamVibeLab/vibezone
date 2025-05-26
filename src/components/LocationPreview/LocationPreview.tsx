@@ -3,13 +3,14 @@ import Image from "next/image";
 import { CategoryNames } from "@/constants/locations"
 
 export default function LocationPreview({ data }: { data: { id: string; name: string; address: string; price: string; categories: number[] } }) {
-    if (data.name.length > 64)
+    let displayName = data.name
+    if (displayName.length > 32)
     {
-        data.name = data.name.substring(0, 64).concat("...");
+        displayName = displayName.substring(0, 32 - 3).concat("...");
     }
-    if (data.address.length > 64)
+    if (data.address.length > 32)
     {
-        data.address = data.address.substring(0, 64).concat("...");
+        data.address = data.address.substring(0, 32 - 3).concat("...");
     }
     
 
@@ -28,19 +29,19 @@ export default function LocationPreview({ data }: { data: { id: string; name: st
             <p className="absolute bottom-35 left-2
             h-5
             select-none
-            text-lg text-left font-bold text-bright-foreground bold-shadow-dark-foreground">{data.name}</p>
+            text-nowrap text-lg text-left font-bold text-bright-foreground bold-shadow-dark-foreground">{data.name}</p>
             <p className="absolute bottom-25 left-2
             h-5
             select-none
-            text-lg text-left font-bold text-bright-foreground bold-shadow-dark-foreground">{data.address}</p>
+            text-nowrap text-lg text-left font-bold text-bright-foreground bold-shadow-dark-foreground">{data.address}</p>
             <p className="absolute bottom-15 left-2
             h-5
             select-none
-            text-lg text-left font-bold text-bright-foreground bold-shadow-dark-foreground">{data.price}</p>
+            text-nowrap text-lg text-left font-bold text-bright-foreground bold-shadow-dark-foreground">{data.price}</p>
             <p className="absolute bottom-5 left-2
             h-5
             select-none
-            text-lg text-left font-bold text-bright-foreground bold-shadow-dark-foreground">{data.categories.map(category => CategoryNames[category]).join(", ")}</p>
+            text-nowrap text-lg text-left font-bold text-bright-foreground bold-shadow-dark-foreground">{data.categories.map(category => CategoryNames[category]).join(", ")}</p>
         </a>
     )
 }
