@@ -1,14 +1,12 @@
 //import React from 'react';
 "use client";
 
+
 import PlaceCard from './PlaceCard'
 import { Place } from './PlaceCard';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import React, { useState } from 'react';
-
-//import Footer from './footer';
-
 export default function VikasPage() {
 
   const places: Place[] = [
@@ -231,9 +229,29 @@ export default function VikasPage() {
     }
   ];
 
+
+  const handleRandomPlace = () => {
+    const filtered = selectedCategory
+      ? places.filter(place => place.category === selectedCategory)
+      : places;
+  
+    if (filtered.length === 0) {
+      alert("Немає місць у цій категорії!");
+      return;
+    }
+  
+    const randomIndex = Math.floor(Math.random() * filtered.length);
+    const randomPlace = filtered[randomIndex];
+  
+    window.location.href = randomPlace.link;
+  };
+  
+
+
   const itemsPerPage = 9;
-const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
 
 const categories = [
   'Коворкінг',
@@ -275,7 +293,15 @@ const currentPlaces = filteredPlaces.slice(startIndex, endIndex);
     
       
       <main className="mt-7">
-        <h1 className="text-4xl font-bold text-center text-gray-300 mb-18">Місця які варто відвідати!</h1>
+  <div className="flex justify-between items-center flex-wrap gap-10 mb-10">
+    <h1 className="text-4xl font-bold text-gray-300 ml-130">Місця які варто відвідати!</h1>
+    <button
+      onClick={handleRandomPlace}
+      className="px-10 py-3 text-xl rounded-full border focus:outline-none transition cursor-pointer bg-gradient-to-r from-blue-200 to-purple-200 text-gray-800 hover:bg-gradient-to-r hover:from-cyan-300 hover:to-puple-300 hover:text-gray-900"
+    >
+      🎲 Обрати випадкове місце
+    </button>
+    </div>
 
         <div className="h-px bg-white my-4" />
         
