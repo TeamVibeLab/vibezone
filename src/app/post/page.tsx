@@ -47,7 +47,7 @@ export default function Post() {
                 {postData.date?.toDate().toDateString()}
             </p>
             <p className="px-6
-            text-2xl">
+            text-2xl whitespace-pre-wrap">
                 {postData.content}
             </p>
         </div>

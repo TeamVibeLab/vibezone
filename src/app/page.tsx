@@ -53,7 +53,7 @@ export default function Home() {
               alt="Іконка кнопки, щоб перейти на сторінку локацій"
               width={128}
               height={128}
-              className="w-8 object-center invert"
+              className="w-8 object-center"
           /></span>
         </a>
         <div className="lg:w-2/3 max-lg:w-full

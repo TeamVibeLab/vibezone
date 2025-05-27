@@ -50,7 +50,7 @@ export default function Locations() {
                         className={`w-96 h-16 p-4
                         text-bright-foreground text-xl text-center
                         flex justify-center items-center
-                        rounded-4xl ${!enabledCategories[category] ? "color-button" : "color-button-reversed"}`}
+                        rounded-4xl ${!enabledCategories[category] ? "color-button" : "color-button-selected"}`}
                         key={category}
                         onClick={() => {
                             setEnabledCategories(prev => ({

@@ -42,13 +42,13 @@
 
 @layer utilities {
   .color-button {
-    @apply bg-gradient-to-br from-[#aeb0b1] to-[#947fd3] hover:bg-gradient-to-br hover:from-[#2289ff] hover:to-[#c022ff] transition;
-    @apply text-bright-foreground;
+    @apply bg-gradient-to-r from-blue-400 to-purple-400 hover:bg-gradient-to-br hover:from-cyan-300 hover:to-purple-300 transition;
+    @apply text-gray-900;
   }
 
-  .color-button-reversed {
-    @apply bg-gradient-to-br from-[#2289ff] to-[#c022ff] hover:bg-gradient-to-br hover:from-[#aeb0b1] hover:to-[#947fd3] transition;
-    @apply text-bright-foreground;
+  .color-button-selected {
+    @apply bg-gradient-to-r from-blue-300 to-purple-300 hover:bg-gradient-to-br hover:from-cyan-300 hover:to-purple-300 transition;
+    @apply text-gray-900;
   }
 }
 
