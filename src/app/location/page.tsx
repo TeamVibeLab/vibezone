@@ -10,6 +10,7 @@ import { useSearchParams } from "next/navigation"
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 import firebaseApp from "@/firebase/app";
+import Review from "@/components/Review/Review";
 
 export default function Location() {
     const [postData, setPostData] = useState([]);
@@ -62,6 +63,7 @@ export default function Location() {
                     <p className="text-xl">{postData.address}</p>
                     <p className="text-xl">{postData.price}</p>
                     <p className="text-xl text-muted-bright-foreground">{postData.categories?.map(category => CategoryNames[category]).join(", ")}</p>
+                    <p className="text-xl">Палац Потоцьких – визначна пам'ятка архітектури кінця ХІХ століття в Україні. Він є музейним підрозділом Львівської національної галереї. Цей палац, згідно з пошуковою інформацією, вирізняється серед інших архітектурних споруд. Немає додаткової інформації про його поточну функцію, окрім як бути музейним підрозділом. Відсутні відомості про конкретні експонати або виставки.</p>
                 </div>
 
                 <div className="w-full
@@ -93,6 +95,12 @@ export default function Location() {
                     }
                 </div>
 
+            </section>
+            <section className="my-5
+            grid grid-cols-3 gap-4 justify-items-center">
+                <Review data={{name: "Андрій", rating: 4, content: "«Італійський дворик» — це справжній куточок Італії у Львові. Атмосфера дуже затишна, а обслуговування уважне і приємне. Смачна паста та справжня італійська кава зробили мій вечір незабутнім."}} />
+                <Review data={{name: "Марія", rating: 5, content: "Мені дуже сподобався «Італійський дворик» — тут відчувається автентичний дух Італії. Меню різноманітне, а порції щедрі і свіжі. Обов’язково повернуся сюди з друзями, щоб насолодитись атмосферою ще раз."}} />
+                <Review data={{name: "Олег", rating: 4, content: "Відвідав «Італійський дворик» і залишився в захваті від інтер’єру та смачної кухні. Піца була ідеальною, а десерти просто танули в роті. Рекомендую всім, хто хоче поринути в італійський настрій посеред Львова."}} />
             </section>
         </div>
     )
