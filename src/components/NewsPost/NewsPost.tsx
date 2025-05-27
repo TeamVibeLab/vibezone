@@ -21,7 +21,7 @@ export default function NewsPost({ data }: { data: { id: string; title: string; 
             <p className="col-span-2
             text-2xl font-bold text-bright-foreground">{data.description}</p>
             <p className="col-span-2 self-start
-            text-sm text-bright-foreground">{data.date?.toDate().toDateString()}</p>
+            text-sm text-muted-bright-foreground">{data.date?.toDate().toDateString()}</p>
             <p className="col-span-2
             text-2xl font-bold text-right">Читати далі</p>
         </a>

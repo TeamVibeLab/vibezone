@@ -42,8 +42,8 @@ export default function Post() {
             text-6xl font-bold">
                 {postData.title}
             </h1>
-            <p className="px-12
-            text-base">
+            <p className="px-6
+            text-xl text-muted-bright-foreground">
                 {postData.date?.toDate().toDateString()}
             </p>
             <p className="px-6
