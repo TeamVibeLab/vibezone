@@ -3,11 +3,11 @@
 @theme {
 
   --color-background: #2a2d3e;
+
   --color-bright-foreground: #dddddd;
+  --color-muted-bright-foreground: #bbbbbb;
   --color-dark-foreground: #17141a;
 
-  --color-button: #b69dff;
-  --color-button-highlight: #c850ff;
   --color-link: #3acdff;
   --color-link-highlight: #2a6cf1;
 
@@ -32,6 +32,26 @@
     0 0 1px var(--color-dark-foreground);
 }
 
+@layer utilies {
+  .color-container {
+    @apply bg-gradient-to-br from-bright-foreground/40 to-bright-foreground/10;
+    @apply rounded-4xl;
+    @apply text-bright-foreground;
+  }
+}
+
+@layer utilities {
+  .color-button {
+    @apply bg-gradient-to-br from-[#aeb0b1] to-[#947fd3] hover:bg-gradient-to-br hover:from-[#42b3ff] hover:to-[#c850ff] transition;
+    @apply text-bright-foreground;
+  }
+
+  .color-button-reversed {
+    @apply bg-gradient-to-br from-[#42b3ff] to-[#c850ff] hover:bg-gradient-to-br hover:from-[#aeb0b1] hover:to-[#947fd3] transition;
+    @apply text-bright-foreground;
+  }
+}
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -43,8 +63,14 @@
 }
 
 body, html {
-  background: var(--color-background);
+  background-color: var(--color-background);
+  background-image: url('/images/background.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+
   color: var(--color-bright-foreground);
+  
   font-family: var(--font-play);
 }
 

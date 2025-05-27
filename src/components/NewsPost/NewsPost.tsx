@@ -4,8 +4,7 @@ import Image from "next/image";
 export default function NewsPost({ data }: { data: { id: string; title: string; description: string; image_src: string; date: Timestamp } }) {
     return (
         <a className="p-4
-        rounded-lg bg-bright-foreground
-        text-dark-foreground
+        color-container
         grid grid-cols-3 gap-2 items-center"
         href={`/post?id=${data.id}`}>
             <div className="relative w-full h-auto aspect-3/2 row-span-4 rounded-3xl overflow-hidden">
@@ -18,11 +17,11 @@ export default function NewsPost({ data }: { data: { id: string; title: string; 
                 />
             </div>
             <p className="col-span-2
-            text-4xl font-bold">{data.title}</p>
+            text-4xl font-bold text-bright-foreground">{data.title}</p>
             <p className="col-span-2
-            text-2xl font-bold">{data.description}</p>
+            text-2xl font-bold text-bright-foreground">{data.description}</p>
             <p className="col-span-2 self-start
-            text-sm">{data.date?.toDate().toDateString()}</p>
+            text-sm text-bright-foreground">{data.date?.toDate().toDateString()}</p>
             <p className="col-span-2
             text-2xl font-bold text-right">Читати далі</p>
         </a>

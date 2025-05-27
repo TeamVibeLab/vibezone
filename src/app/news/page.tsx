@@ -25,8 +25,7 @@ export default function News() {
   }, [])
 
     return (
-        <section className="w-3/5 p-4
-        rounded-lg bg-bright-foreground/50">
+        <section className="w-3/5 p-4">
 
             <div className="flex flex-col gap-12">
                 {

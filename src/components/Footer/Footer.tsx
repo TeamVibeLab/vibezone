@@ -47,12 +47,11 @@ const contactLinks = [
 
 export default function Footer() {
     return (
-        <footer className="mt-3 pt-6 pb-3
-         rounded-t-4xl bg-dark-foreground" >
+        <footer className="mt-3 mx-6 pt-6 pb-3
+         rounded-t-4xl border-t-4 border-x-4 color-container border-bright-foreground" >
             <LogoImage bright={true} extraClassName="mx-auto pb-6 lg:hidden"/>
             <div className="md:max-w-8xl
-            flex md:flex-row max-md:flex-col items-start justify-center gap-x-8
-            text-bright-foreground">
+            flex md:flex-row max-md:flex-col items-start justify-center gap-x-8">
                 <LogoImage bright={true} extraClassName="px-4 max-lg:hidden"/>
                 <NavLinks title="Сторінки" linkParams={footerWebsiteLinks}/>
                 <NavLinks title="Соціальні мережі" linkParams={footerExternalLinks}/>

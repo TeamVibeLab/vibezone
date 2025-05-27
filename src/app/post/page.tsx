@@ -28,8 +28,7 @@ export default function Post() {
 
     return (
         <div className="w-4/5
-        rounded-lg bg-bright-foreground
-        text-dark-foreground">
+        color-container">
             <Image
                 src={`/images/${postData.image_src}`}
                 alt="Фотографія локації"
@@ -37,8 +36,7 @@ export default function Post() {
                 height={3758}
                 className="object-cover
                 w-full h-64
-                rounded-t-lg
-                border-b-4 border-dark-foreground"
+                rounded-t-lg"
             />
             <h1 className="px-6
             text-6xl font-bold">

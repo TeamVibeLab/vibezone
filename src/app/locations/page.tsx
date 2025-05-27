@@ -38,8 +38,10 @@ export default function Locations() {
     return (
         <div className="w-4/5
         text-bright-foreground">
+            <p className="text-6xl font-bold text-center">Місця, які варто відвідати!</p>
+            <div className="h-px bg-bright-foreground my-4"/>
             <section>
-                <p className="text-5xl font-bold text-center">Категорії</p>
+                <p className="text-3xl font-bold text-center">Категорії</p>
                 <div className="w-full my-4
                 flex flex-row justify-content items-center gap-x-2">
                 {
@@ -48,7 +50,7 @@ export default function Locations() {
                         className={`w-96 h-16 p-4
                         text-bright-foreground text-xl text-center
                         flex justify-center items-center
-                        rounded-4xl ${!enabledCategories[category] ? "bg-button" : "bg-button-highlight"} ${!enabledCategories[category] ? "hover:bg-button-highlight" : "hover:bg-button"}`}
+                        rounded-4xl ${!enabledCategories[category] ? "color-button" : "color-button-reversed"}`}
                         key={category}
                         onClick={() => {
                             setEnabledCategories(prev => ({
@@ -63,6 +65,7 @@ export default function Locations() {
                 }
                 </div>
             </section>
+            <div className="h-px bg-bright-foreground my-4"/>
             <section className="grid grid-cols-5 gap-4 justify-center items-center">
                 {
                     displayedLocations.map((post, index) => (

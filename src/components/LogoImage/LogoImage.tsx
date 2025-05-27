@@ -4,7 +4,7 @@ export default function LogoImage({ bright, extraClassName }: { bright: boolean,
 {
     return (
     <Image
-        src={`/images/logo.png`}
+        src={`/images/logo_text.png`}
         alt="Логотип VibeZone"
         width={1007}
         height={171}

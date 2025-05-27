@@ -37,7 +37,7 @@ export default function Header() {
         ${displayMenuSmall ? `max-md:grow max-md:min-h-screen max-md:fixed
             max-md:justify-start` : `max-md:fixed`}
         top-0 left-0 right-0
-        rounded-b-4xl bg-bright-foreground`}>
+        bg-bright-foreground text-dark-foreground`}>
             <div className="flex flex-col w-full gap-y-2">
                 <div className="flex flex-row w-full items-center md:justify-center max-md:justify-between md:gap-x-8">
                     <LogoImage bright={false} extraClassName="mx-4"/>
@@ -55,7 +55,7 @@ export default function Header() {
 
                     <nav className="flex flex-row gap-x-4 max-md:hidden">
                         {headerWebsiteLinks.map(item => (
-                            <a className="text-2xl text-dark-foreground hover:bold-shadow-dark-foreground" key={item.text} {...item}>{item.text}</a>
+                            <a className="text-2xl hover:font-bold" key={item.text} {...item}>{item.text}</a>
                         ))}
                     </nav>
                 </div>
@@ -63,7 +63,7 @@ export default function Header() {
                     text-right
                     md:hidden ${!displayMenuSmall && `hidden`}`}>
                     {headerWebsiteLinks.map(item => (
-                        <a className="px-2 text-2xl text-dark-foreground rounded-lg bg-dark-foreground/20 hover:bg-dark-foreground/40 hover:bold-shadow-dark-foreground" key={item.text} {...item}>{item.text}</a>
+                        <a className="px-2 text-2xl rounded-lg bg-dark-foreground/20 hover:bg-dark-foreground/40 hover:bold-shadow-dark-foreground" key={item.text} {...item}>{item.text}</a>
                     ))}
                 </div>
             </div>

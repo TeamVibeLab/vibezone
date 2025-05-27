@@ -1,8 +1,7 @@
 export default function About() {
     return (
         <section className="w-4/5 p-4
-        rounded-lg bg-bright-foreground
-        text-dark-foreground">
+        color-container">
             <p className="text-6xl font-bold flex justify-center">Про нас</p>
             <p className="text-xl">
 VibeZone — це онлайн-платформа, створена для того, щоб допомогти львівським студентам знаходити найкращі місця для відпочинку, розваг, навчання та особистого розвитку. Завдяки зручним фільтрам, стислим описам та актуальній дошці оголошень, ви легко знайдете простір, який відповідає саме вашим потребам.
